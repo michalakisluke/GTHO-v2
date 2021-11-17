@@ -2,9 +2,9 @@ const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
 // create our User Model
-class Destination extends Model {}
+class Review extends Model {}
 
-Destination.init(
+Review.init(
     {
         id: {
             type: DataTypes.INTEGER,
@@ -12,26 +12,18 @@ Destination.init(
             primaryKey: true,
             autoIncrement: true
         },
-        city: {
-            type: DataTypes.STRING,
+        rating: {
+            type: DataTypes.INTEGER,
             allowNull: false
-        },
-        airportCode: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            unique: true,
-            validate: {
-                len: [4]
-            }
-        } 
+        }  
     },
     {
         sequelize,
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'destination'
+        modelName: 'review'
     }
 );
 
-module.exports = Destination;
+module.exports = Review;
