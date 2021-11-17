@@ -1,15 +1,10 @@
-const bcrypt = require('bcrypt');
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
 // create our User Model
-class User extends Model {
-    checkPassword(loginPw) {
-      return bcrypt.compareSync(loginPw, this.password);
-    }
-}
+class Destination extends Model {}
 
-User.init(
+Destination.init(
     {
         id: {
             type: DataTypes.INTEGER,
@@ -17,33 +12,26 @@ User.init(
             primaryKey: true,
             autoIncrement: true
         },
-        username: {
+        city: {
             type: DataTypes.STRING,
             allowNull: false
         },
-        email: {
+        airportCode: {
             type: DataTypes.STRING,
             allowNull: false,
             unique: true,
             validate: {
-                isEmail: true
+                len: [4]
             }
-        },
-        password: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            validate: {
-                len: [4,50]
-            }
-        }
+        } 
     },
     {
         sequelize,
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'user'
+        modelName: 'destination'
     }
 );
 
-module.exports = User;
+module.exports = Destination;
