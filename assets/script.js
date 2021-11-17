@@ -145,7 +145,7 @@ function localTempApiFetch() {
 
 }
 
-// find closest airport
+// find closest airports
 function distance(latAtAirport, lonAtAirport, localLat, localLon) {
     if ((latAtAirport == localLat) && (lonAtAirport == localLon)) {
         return 0;
@@ -208,6 +208,12 @@ function chooseWarmest() {
     warmestAirportLat = tempCheckArray[0]["latitude"];
     warmestAirportLon = tempCheckArray[0]["longitude"];
     warmLatLon = { "latitude": warmestAirportLat, "longitude": warmestAirportLon };
+
+    if (warmestAirportLat === closestAirportLat && warmestAirportLon === warmestAirportLat) {
+        warmestAirportLat = tempCheckArray[1]["latitude"];
+        warmestAirportLon = tempCheckArray[1]["longitude"];
+        warmLatLon = { "latitude": warmestAirportLat, "longitude": warmestAirportLon };
+    }
 }
 
 function writeInfo() {
