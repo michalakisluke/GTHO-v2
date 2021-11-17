@@ -27,9 +27,14 @@
                     <div id="offcanvas-nav" uk-offcanvas="overlay: true; flip: true">
                         <div class="uk-offcanvas-bar">
                             <ul class="uk-nav">
-                                <li><a href="#explanation"><span class="uk-margin-small-right" uk-icon="icon: info"></span> How it works</a></li>
-                                <li><a href="#locations"><span class="uk-margin-small-right" uk-icon="icon: world"></span> Let's go</a></li>
-                                <li><a href="#credits"><span class="uk-margin-small-right" uk-icon="icon: users"></span> Team</a></li>
+                                <!--change icon and target modol on click-->
+                                {{#if User}}
+                                <li><a href="#explanation"><span class="uk-margin-small-right" uk-icon="icon: info"></span>Welcome {{username}}</a></li>
+                                <li><a href="#explanation"><span class="uk-margin-small-right" uk-icon="icon: info"></span>Login</a></li>
+                                {{/if}}
+                                <li><a href="#locations"><span class="uk-margin-small-right" uk-icon="icon: world"></span>Let's go</a></li>
+                                <li><a href="#credits"><span class="uk-margin-small-right" uk-icon="icon: users"></span>Team</a></li>
+                                <!--add destination search-->
                             </ul>
                         </div>
                     </div>
@@ -37,6 +42,9 @@
             </ul>
         </div>
     </nav>
+
+    <!--add modal for user login-->
+    <!--add modal for -->
 
     <main>
 
@@ -106,7 +114,7 @@
                 <div class="uk- card uk-container-center uk-padding-large uk-margin">
                     <h2 class="uk-heading-line uk-margin-small-left"><span>Pack your bags</span></h2>
                     <div class="uk-text-center">
-                        <p class="location">You're headed to <span id=location-name>[city]</span>!</p>
+                        <p class="location">You're headed to <span id=location-name>{{city}}</span>!</p>
                         <p>The current temperature is <span id="location-temp">[temp]</span>°F</p>
                         <button class="flight-link uk-button uk-button-secondary">Book my flight!</button>
                     </div>
@@ -123,7 +131,7 @@
                 <div class="uk-text-center uk-padding-large uk-margin">
                     <div><span uk-icon="icon: bookmark; ratio: 4"></span></div>
                     <div class="uk-padding-small"><label for="">Travel history</label></div>
-                    <p>Your last trip was to <span id="previous-location-name">[city]</span>.</p>
+                    <p>Your last trip was to <span id="previous-location-name">{{city}}</span>.</p>
                     <div><input id="book-again" type="submit" value="Take me back!" class="uk-input uk-form-width-small uk-button-secondary" /></div>
                 </div>
             </form>
