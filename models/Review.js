@@ -14,7 +14,7 @@ Review.init(
         },
         rating: {
             type: DataTypes.INTEGER,
-            allowNull: false
+            allowNull: true
         }  
     },
     {
