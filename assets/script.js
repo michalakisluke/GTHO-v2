@@ -145,7 +145,7 @@ function localTempApiFetch() {
 
 }
 
-// find closest airports
+// find closest airport
 function distance(latAtAirport, lonAtAirport, localLat, localLon) {
     if ((latAtAirport == localLat) && (lonAtAirport == localLon)) {
         return 0;
@@ -209,7 +209,8 @@ function chooseWarmest() {
     warmestAirportLon = tempCheckArray[0]["longitude"];
     warmLatLon = { "latitude": warmestAirportLat, "longitude": warmestAirportLon };
 
-    if (warmestAirportLat === closestAirportLat && warmestAirportLon === warmestAirportLat) {
+    if (warmestAirportLat == closestAirportLat && warmestAirportLon == closestAirportLon) {
+        console.log("You are in the hottest place you absolute idiot, you are a total fool, and everybody will know your shame");
         warmestAirportLat = tempCheckArray[1]["latitude"];
         warmestAirportLon = tempCheckArray[1]["longitude"];
         warmLatLon = { "latitude": warmestAirportLat, "longitude": warmestAirportLon };
@@ -227,7 +228,6 @@ function writeInfo() {
         if (destIata === bigAirports[i]["iataCode"]) {
             destCity = bigAirports[i]["city"];
             localStorage.setItem("destCity", destCity);
-
         }
     }
 
