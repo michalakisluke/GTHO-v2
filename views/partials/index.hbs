@@ -27,23 +27,19 @@
                     <div id="offcanvas-nav" uk-offcanvas="overlay: true; flip: true">
                         <div class="uk-offcanvas-bar">
                             <ul class="uk-nav">
-                                <!--change icon and target modol on click-->
-                                <script id="login">
-                                {{#if user}}
-                                <li><span class="uk-margin-small-right" uk-icon="icon: info"></span>Welcome {{username}}
-                                </li>
-                                <li><a href="#locations"><span class="uk-margin-small-right" uk-icon="icon: world"></span>Let's go</a></li>
-                                <li><a href="#credits"><span class="uk-margin-small-right" uk-icon="icon: users"></span>Team</a></li>
-                                {{!-- add destination search here --}}
-                                <p>Log out</p>
+                                <!--Todo: change icon and target modol on click-->
+                                {{#if User}}
+                                <li><span class="uk-margin-small-right" uk-icon="icon: info"></span>Welcome {{username}}</li>
                                 {{else}}
                                 <li><span class="uk-margin-small-right" uk-icon="icon: info"></span>Login
                                 </li>
+                                {{/if}}
                                 <li><a href="#locations"><span class="uk-margin-small-right" uk-icon="icon: world"></span>Let's go</a></li>
                                 <li><a href="#credits"><span class="uk-margin-small-right" uk-icon="icon: users"></span>Team</a></li>
-                                {{!-- add destination search here --}}
+                                <!--add destination search here-->
+                                {{#if User}}
+                                <p>Log out</p>
                                 {{/if}}
-                                </script>
                             </ul>
                         </div>
                     </div>
@@ -172,7 +168,6 @@
 
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.3/dist/js/uikit.min.js"></script>
