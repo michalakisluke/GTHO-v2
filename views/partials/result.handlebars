@@ -1,0 +1,40 @@
+{{!-- DESTINATION RESULTS --}}
+            {{#if destination}}
+        <section id="flights">
+<!--remove hidden from js-->
+            <div class="flight-info uk-flex uk-child-width-1-2@m" uk-grid>
+                <div class="uk-card">
+                    <img src="./assets/img/photo-1568596312185-2c3e8f8042c3.jpg" alt="hot landscape">
+                </div>
+                <div class="uk- card uk-container-center uk-padding-large uk-margin">
+                    <h2 class="uk-heading-line uk-margin-small-left"><span>Pack your bags</span></h2>
+                    <div class="uk-text-center">
+                        <p class="location">You're headed to <span id=location-name>{{city}}</span>!</p>
+                        <p>The current temperature is <span id="location-temp">[temp]</span>°F</p>
+                        {{#if rating}}
+                        <p>Rating: {{rating}}</p>
+                        <p>That's hott!</p>
+                        {{/if}}
+                        <button class="flight-link uk-button uk-button-secondary">Book my flight!</button>
+                    </div>
+                </div>
+
+            </div>
+
+            </div>
+{{!-- RESET BUTTON --}}
+            <div id="go-again" class="uk-text-center uk-padding-large">
+                <button id="go-again-button" uk-totop>
+                <p>Go again?</p></button>
+            </div>
+{{!-- HISTORY --}}
+            <form id="flight-history">
+                <div class="uk-text-center uk-padding-large uk-margin">
+                    <div><span uk-icon="icon: bookmark; ratio: 4"></span></div>
+                    <div class="uk-padding-small"><label for="">Travel history</label></div>
+                    <p>Your last trip was to {{city}}.</p>
+                    <div><input id="book-again" type="submit" value="Take me back!" class="uk-input uk-form-width-small uk-button-secondary" /></div>
+                </div>
+            </form>
+        </section>
+        {{/if}}
