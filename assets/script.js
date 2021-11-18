@@ -208,6 +208,13 @@ function chooseWarmest() {
     warmestAirportLat = tempCheckArray[0]["latitude"];
     warmestAirportLon = tempCheckArray[0]["longitude"];
     warmLatLon = { "latitude": warmestAirportLat, "longitude": warmestAirportLon };
+
+    if (warmestAirportLat == closestAirportLat && warmestAirportLon == closestAirportLon) {
+        console.log("You are in the hottest place you absolute idiot, you are a total fool, and everybody will know your shame");
+        warmestAirportLat = tempCheckArray[1]["latitude"];
+        warmestAirportLon = tempCheckArray[1]["longitude"];
+        warmLatLon = { "latitude": warmestAirportLat, "longitude": warmestAirportLon };
+    }
 }
 
 function writeInfo() {
@@ -221,7 +228,6 @@ function writeInfo() {
         if (destIata === bigAirports[i]["iataCode"]) {
             destCity = bigAirports[i]["city"];
             localStorage.setItem("destCity", destCity);
-
         }
     }
 
