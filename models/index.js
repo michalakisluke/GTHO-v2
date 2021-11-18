@@ -15,5 +15,3 @@ Destination.hasMany(Review, {
     foreignKey: 'destinationId',
     onDelete: 'cascade'
 });
-
-Review.belongsTo(Destination);
