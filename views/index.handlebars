@@ -2,7 +2,7 @@
 {{!-- NAVIGATION --}}    
     <nav class="uk-navbar-container" uk-navbar>
         <div class="uk-navbar-left">
-            <img src="./assets/img/heat.png" height="40" width="40" class="uk-logo uk-margin-medium-left" uk-svg></img>
+            <img src="../public/img/heat.png" height="40" width="40" class="uk-logo uk-margin-medium-left" uk-svg></img>
         </div>
         <div class="uk-navbar-right uk-margin-medium-right">
             <ul class="uk-navbar-nav">
@@ -23,7 +23,7 @@
                                 <li><a href="#chosen-destination" uk-toggle="target: #modal-close-default">Destinations</a></li>
 <!--TODO: add log out-->
                                 {{#if user}}
-                                <li><a href="">Log out</a></li>
+                                <li><a href="logout">Log out</a></li>
                                 {{/if}}
                             </ul>
                         </div>
@@ -39,7 +39,7 @@
             <div class="uk-flex uk-child-width-1-2@m" uk-grid>
 
                 <div class="uk-card">
-                    <img src="./assets/img/photo-1594478277825-11f41a17122a.jpg" alt="">
+                    <img src="../public/img/photo-1594478277825-11f41a17122a.jpg" alt="">
                     <div class="uk-overlay uk-position-medium uk-position-top-center uk-hidden@m">
                         <h1 id="h1">Get Me the Hell Out of Here!</h1>
                     </div>
@@ -83,7 +83,11 @@
     </main>
 </body>
 
-    <script src="./assets/script.js"></script>
-    <script src="./assets/updatescript.js"></script>
+    <script src="../public/javascript/script.js"></script>
+    <script src="../public/javascript/login.js"></script>
+    <script src="../public/javascript/logout.js"></script>
+    <script src="../public/javascript/delete-ratings.js"></script>
+    <script src="../public/javascript/vote.js"></script>
+    
 
 
