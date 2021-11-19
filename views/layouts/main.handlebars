@@ -41,10 +41,10 @@
                                 <li><a href="#credits"><span class="uk-margin-small-right" uk-icon="icon: users"></span></a></li>
                                 {{#if user}}
                                 {{!-- TODO: sign out --}}
-                                <li><a href="logout"><span class="uk-margin-small-right" uk-icon="icon: sign-out"></span></a></li>
+                                <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: sign-out"></span></a></li>
                                 {{else}}
                                 {{!-- TODO: sign in target login modal--}}
-                                <li><a href="/views/" uk-toggle="target: #modal-close-default"><span class="uk-margin-small-right" uk-icon="icon: sign-in"></span></a></li>
+                                <li><a href="#user-login" uk-toggle="target: #modal-close-default"><span class="uk-margin-small-right" uk-icon="icon: sign-in"></span></a></li>
                                 {{/if}}
                             </ul>
 
