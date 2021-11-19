@@ -17,6 +17,7 @@ router.post('/login', (req, res, next) => {
     })(req, res, next);
 });
 
+module.exports = router;
 
 // req.user
 // req.isAuthenticated() -> true or false
