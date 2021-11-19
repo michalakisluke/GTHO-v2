@@ -1,4 +1,5 @@
 const passport = require("passport");
+const router = require();
 
 router.post('/login', (req, res, next) => {
     // expects {email: 'YYY@gmail.com', password: 'password1234'}
