@@ -2,12 +2,12 @@ INSERT INTO user (username, email, password)
 VALUES
   ('userguy', 'userguy@gmail.com', 'password123'),
   ('userlady', 'userlady@gmail.com', 'password321'),
-  ('userperson', 'userperson@gmail.com', 'password213')
+  ('userperson', 'userperson@gmail.com', 'password213');
 
-INSERT INTO destination (city, airportCode)
+INSERT INTO destination (city, airport_code)
 VALUES
   ('Atlanta','ATL'),
-  ('Dallas', 'DFW'),
+  ('Dallas','DFW'),
   ('Denver','DEN'),
   ('Chicago','ORD'),
   ('Los Angeles','LAX'),
@@ -65,4 +65,4 @@ VALUES
   ('Anchorage','ANC'),
   ('Omaha','OMA'),
   ('Memphis','MEM'),
-  ('Reno','RNO')
+  ('Reno','RNO');
