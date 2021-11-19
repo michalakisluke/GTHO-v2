@@ -30,8 +30,12 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(session(sess));
+console.log("here4")
+    //turn on routes
+
 
 //turn on routes
+
 app.get('/', (req, res) => {
     res.render('index', {});
 });

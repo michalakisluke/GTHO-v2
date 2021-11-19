@@ -33,13 +33,16 @@ Review.init(
             }
         }  
     },
-    {
-        sequelize,
-        timestamps: false,
-        freezeTableName: true,
-        underscored: true,
-        modelName: 'review'
+    rating: {
+        type: DataTypes.INTEGER,
+        allowNull: true
     }
-);
+}, {
+    sequelize,
+    timestamps: false,
+    freezeTableName: true,
+    underscored: true,
+    modelName: 'review'
+});
 
 module.exports = Review;

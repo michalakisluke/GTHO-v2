@@ -6,7 +6,7 @@ const Destination = require('../models/Destination');
 const Review = require('../models/Review');
 
 router.post('/login', (req, res, next) => {
-    // expects {email: 'YYY@gmail.com', password: 'password1234'}
+    //expects { email: 'YYY@gmail.com', password: 'password1234' }
     passport.authenticate('local', function(err, user, info) {
         if (err) { return next(err); }
 
