@@ -4,20 +4,16 @@ const routes = require('./controllers/');
 const sequelize = require('./config/connection');
 const session = require('express-session');
 const exphbs = require('express-handlebars');
-const passport = require('passport');
+//const passport = require('./passport/passport');
 require('./passport/passport');
 require("dotenv").config();
-
 const SequelizeStore = require('connect-session-sequelize')(session.Store)
-
 const app = express();
-const PORT = process.env.PORT || 3001;
-
+const PORT = process.env.PORT || 9001;
 
 const hbs = exphbs.create()
-
 const sess = {
-    secret: process.env.SESSIONS_PW,
+    secret: 'secret',
     cookie: {},
     resave: false,
     saveUninitialized: true,
@@ -25,21 +21,22 @@ const sess = {
         db: sequelize
     })
 };
-
+app.engine('handlebars', hbs.engine);
+app.set('view engine', 'handlebars');
+app.set("views", "./views");
+//app.use(passport.initialize());
+//app.use(passport.session());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(session(sess));
 
-app.use(passport.initialize());
-app.use(passport.session());
-app.engine('handlebars', exphbs.engine);
-app.set('view engine', 'handlebars');
-
 //turn on routes
-app.get('/', (req,res) => {
- res.send('Eureka!');
-})
+app.get('/', (req, res) => {
+    res.render('index', {});
+});
+
+app.use(routes);
 
 //turn on connection to db and server
 sequelize.sync({ force: false }).then(() => {

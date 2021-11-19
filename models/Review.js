@@ -14,7 +14,23 @@ Review.init(
         },
         rating: {
             type: DataTypes.INTEGER,
-            allowNull: true
+            allowNull: false
+        },
+        user: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            references: {
+                model:'user',
+                key: 'id'
+            }
+        },
+        destination_id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            references: {
+                model:'destination',
+                key: 'id'
+            }
         }  
     },
     {

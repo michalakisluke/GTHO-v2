@@ -16,12 +16,12 @@ Destination.init(
             type: DataTypes.STRING,
             allowNull: false
         },
-        airportCode: {
+        airport_code: {
             type: DataTypes.STRING,
             allowNull: false,
             unique: true,
             validate: {
-                len: [4]
+                len: [3]
             }
         } 
     },
