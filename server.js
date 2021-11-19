@@ -32,6 +32,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(session(sess));
 
 //turn on routes
+app.use(routes);
 app.get('/', (req, res) => {
     res.render('index', {});
 });
