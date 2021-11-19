@@ -1,10 +1,10 @@
-INSERT INTO users (username, email, password)
+INSERT INTO user (username, email, password)
 VALUES
   ('userguy', 'userguy@gmail.com', 'password123'),
   ('userlady', 'userlady@gmail.com', 'password321'),
   ('userperson', 'userperson@gmail.com', 'password213')
 
-INSERT INTO destinations (city, airportCode)
+INSERT INTO destination (city, airportCode)
 VALUES
   ('Atlanta','ATL'),
   ('Dallas', 'DFW'),
