@@ -35,7 +35,6 @@ console.log("here4")
 
 
 //turn on routes
-
 app.get('/', (req, res) => {
     res.render('index', {});
 });
