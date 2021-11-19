@@ -15,7 +15,7 @@ const exphbs = require('express-handlebars');
 const hbs = exphbs.create();
 
 const sess = {
-    secret: SESSIONS_PW,
+    secret: process.env.SESSIONS_PW,
     cookie: {},
     resave: false,
     saveUninitialized: true,
