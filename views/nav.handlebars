@@ -12,9 +12,9 @@
                 <li><a href="#locations" uk-tooltip="Let's Go"><span class="uk-margin-small-right" uk-icon="icon: world"></span></a></li>
                 {{#if user}}
                 {{!-- <!-- TODO: logout --> --}}
-                <li><a href="#" uk-tooltip="Logout"><span class="uk-margin-small-right" uk-icon="icon: sign-out"></span></a></li>
+                <li><a href="#" id="logout" uk-tooltip="Logout"><span class="uk-margin-small-right" uk-icon="icon: sign-out"></span></a></li>
                 {{!-- TODO: delete user reviews --}}
-                <li><a ref="" uk-tooltip="Remove my ratings"><span class="uk-margin-small-right" uk-icon="refresh"></span></a></li>
+                <li><a ref="#" id="delete" uk-tooltip="Remove my ratings"><span class="uk-margin-small-right" uk-icon="refresh"></span></a></li>
                 {{else}}
                 {{!-- <!-- TODO: sign in target login modal --> --}}
                 <li><a class="uk-navbar-toggle" uk-toggle href="#user-login" uk-tooltip="Sign up & Login"><span class="uk-margin-small-right" uk-icon="icon: sign-in"></span></a></li>
