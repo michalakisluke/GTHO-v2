@@ -42,7 +42,7 @@ VALUES
   ('Austin','AUS'),
   ('Chicago','MDW'),
   ('Fort Myers','RSW'),
-  ('Sacramento','RSW'),
+  ('Sacramento','SMF'),
   ('New Orleans','MSY'),
   ('Raleigh','RDU'),
   ('San Juan','SJU'),
@@ -66,3 +66,4 @@ VALUES
   ('Omaha','OMA'),
   ('Memphis','MEM'),
   ('Reno','RNO');
+
