@@ -1,32 +1,3 @@
-{{!--  This is the search / chosen destination modal  --}}
-<div id="chosen-destination" uk-modal>
-    <div class="uk-modal-dialog">
-        <button class="uk-modal-close-default" type="button" uk-close></button>
-        <div class="uk-modal-header">
-            <h2 class="uk-modal-title">{{city}}</h2>
-        </div>
-        <div>
-            <div class="uk-modal-body">
-                <form class="uk-search uk-search-large">
-                    <input class="uk-search-input uk-text-center" type="search" placeholder="Explore Destinations" autofocus>
-                </form>
-                {{#if Destination}}
-                <p>Hot or Not:{{city.average}}</p>
-                {{!-- should we have an image or something? --}}
-                <p>Been there, done that!</p>
-                <p>Was it hot?</p>
-                {{!-- TODO: add rating selector --}}
-                {{!-- TODO: handle submission --}}
-            </div>
-            <div class="uk-modal-footer uk-text-right">
-                <button class="uk-button uk-button-default uk-modal-close" type="button">Leave</button>
-                <button id="submit-rating" class="uk-button-secondary" type="button">Submit</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-
 {{!--   This is the search / chosen destination modal  --}}
     <div id="search-destination" uk-modal>
         <div class="uk-modal-dialog">
@@ -53,7 +24,7 @@
                         <button class="uk-button uk-button-link uk-padding-large"><span uk-icon="icon: check"></span></button>
                         <button class="uk-button uk-button-link uk-padding-large"><span uk-icon="icon: close"></span></button>
                     </div>
-                    {{!--  TODO: handle rating  --}}
+                    {{!--  TODO: handle rating submission --}}
                 </div>
                 <div class="uk-modal-footer uk-text-right">
                 </div>
