@@ -24,8 +24,28 @@ const sess = {
     })
 };
 
-app.engine('handlebars', hbs.engine);
+app.engine('handlebars', exphbs({ defaultLayout: "main" }));
 app.set('view engine', 'handlebars');
+
+var indexRoutes = require("./controllers/index.js");
+
+app.use("/", indexRoutes);
+
+var indexAPIRoutes = require("./controllers/api/index.js");
+
+app.use("/indexAPI", indexAPIRoutes);
+
+var userRoutes = require("./controllers/api/user-routes/.js");
+
+app.use("/users", userRoutes);
+
+var dashboardRoutes = require("./controllers/dashboard-routes.js");
+
+app.use("/dashboard-routes", dashboardRoutes);
+
+var homeRoutes = require("./controllers/home-routes.js");
+
+app.use("/home-routes", homeRoutes);
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
