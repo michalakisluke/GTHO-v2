@@ -37,8 +37,8 @@ app.engine('handlebars', exphbs.engine);
 app.set('view engine', 'handlebars');
 
 //turn on routes
-app.get('/', (req,res) => {
-    res.render('main');
+app.get('/', (req, res) => {
+    res.render('index');
 })
 
 //turn on connection to db and server
