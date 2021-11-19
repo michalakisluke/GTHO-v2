@@ -3,7 +3,6 @@ const express = require('express');
 const routes = require('./controllers/');
 const sequelize = require('./config/connection');
 const session = require('express-session');
-const passport = require('passport-local');
 const exphbs = require('express-handlebars');
 require("dotenv").config();
 
@@ -13,6 +12,7 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 
+const hbs = exphbs.create()
 
 const sess = {
     secret: process.env.SESSIONS_PW,
@@ -28,32 +28,34 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(session(sess));
-app.engine('handlebars', exphbs());
+app.engine('handlebars', exphbs.engine);
 app.set('view engine', 'handlebars');
 
-var indexRoutes = require("./controllers/index.js");
+// var indexRoutes = require("./controllers/index.js");
 
-app.use("/", indexRoutes);
+// app.use("/", indexRoutes);
 
-var indexAPIRoutes = require("./controllers/api/index.js");
+// var indexAPIRoutes = require("./controllers/api/index.js");
 
-app.use("/indexAPI", indexAPIRoutes);
+// app.use("/indexAPI", indexAPIRoutes);
 
-var userRoutes = require("./controllers/api/user-routes/.js");
+// var userRoutes = require("./controllers/api/user-routes/.js");
 
-app.use("/users", userRoutes);
+// app.use("/users", userRoutes);
 
-var dashboardRoutes = require("./controllers/dashboard-routes.js");
+// var dashboardRoutes = require("./controllers/dashboard-routes.js");
 
-app.use("/dashboard-routes", dashboardRoutes);
+// app.use("/dashboard-routes", dashboardRoutes);
 
-var homeRoutes = require("./controllers/home-routes.js");
+// var homeRoutes = require("./controllers/home-routes.js");
 
-app.use("/home-routes", homeRoutes);
+// app.use("/home-routes", homeRoutes);
 
 
 //turn on routes
-app.use(routes);
+app.get('/', (req,res) => {
+
+})
 
 //turn on connection to db and server
 sequelize.sync({ force: false }).then(() => {
