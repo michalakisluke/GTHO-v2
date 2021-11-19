@@ -38,7 +38,7 @@ app.set('view engine', 'handlebars');
 
 //turn on routes
 app.get('/', (req,res) => {
- res.send('Eureka!');
+    res.render('main');
 })
 
 //turn on connection to db and server
