@@ -1,40 +1,4 @@
-<<<<<<< HEAD
-<body>  
-=======
-{{!-- NAVIGATION     --}}
->>>>>>> 95f8e6507a383064cb724ab27267a07946d7e97c
-    <nav class="uk-navbar-container" uk-navbar>
-        <div class="uk-navbar-left">
-            <img src="../public/img/heat.png" height="40" width="40" class="uk-logo uk-margin-medium-left" uk-svg></img>
-        </div>
-        <div class="uk-navbar-right uk-margin-medium-right">
-            <ul class="uk-navbar-nav">
-                <li>
-                    <a uk-toggle="target: #offcanvas-nav" uk-navbar-toggle-icon href="#"></a>
-                    <div id="offcanvas-nav" uk-offcanvas="overlay: true; flip: true">
-                        <div class="uk-offcanvas-bar">
-                            <ul class="uk-nav">
-<!--Todo: change icon and target modal on click-->
-                                {{#if user}}
-                                <li><span class="uk-margin-small-right" uk-icon="icon: info"></span>{{username}}</li>
-                                {{else}}
-                                <li><a href="#user-login" uk-toggle="target: #modal-close-default">Login</a></li>
-                                {{/if}}
-                                <li><a href="#locations"><span class="uk-margin-small-right" uk-icon="icon: world"></span>Let's go</a></li>
-                                <li><a href="#credits"><span class="uk-margin-small-right" uk-icon="icon: users"></span>Team</a></li>
-<!--TODO: add destination search here-->
-                                <li><a href="#chosen-destination" uk-toggle="target: #modal-close-default">Destinations</a></li>
-<!--TODO: add log out-->
-                                {{#if user}}
-                                <li><a href="logout">Log out</a></li>
-                                {{/if}}
-                            </ul>
-                        </div>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </nav>
+{{>nav}}
 
     <main>    
         <section id="explanation">
