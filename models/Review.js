@@ -33,11 +33,7 @@ Review.init(
             }
         }  
     },
-    rating: {
-        type: DataTypes.INTEGER,
-        allowNull: true
-    }
-}, {
+{
     sequelize,
     timestamps: false,
     freezeTableName: true,
