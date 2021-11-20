@@ -4,7 +4,7 @@ const routes = require('./controllers/');
 const sequelize = require('./config/connection');
 const session = require('express-session');
 const exphbs = require('express-handlebars');
-//const passport = require('./passport/passport');
+const passport = require('passport');
 require('./passport/passport');
 require("dotenv").config();
 const SequelizeStore = require('connect-session-sequelize')(session.Store)
@@ -13,7 +13,7 @@ const PORT = process.env.PORT || 9001;
 
 const hbs = exphbs.create()
 const sess = {
-    secret: 'secret',
+    secret: process.env.SESSIONS_PW,
     cookie: {},
     resave: false,
     saveUninitialized: true,
@@ -24,15 +24,13 @@ const sess = {
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 app.set("views", "./views");
-//app.use(passport.initialize());
-//app.use(passport.session());
+app.use(passport.initialize());
+// This line here breaks my code!!
+app.use(passport.session());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(session(sess));
-console.log("here4")
-    //turn on routes
-
 
 //turn on routes
 app.get('/', (req, res) => {
