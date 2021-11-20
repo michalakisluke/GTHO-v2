@@ -1,7 +1,5 @@
 {{!-- DESTINATION RESULTS --}}
-            {{#if destination}}
         <section id="flights" hidden>
-<!--remove hidden from js if this is sucessful-->
             <div class="flight-info uk-flex uk-child-width-1-2@m" uk-grid>
                 <div class="uk-card">
                     <img src="/img/photo-1568596312185-2c3e8f8042c3.jpg" alt="hot landscape">
@@ -11,10 +9,10 @@
                     <div class="uk-text-center">
                         <p class="location">You're headed to <span id=location-name>{{city}}</span>!</p>
                         <p>The current temperature is <span id="location-temp">[temp]</span>°F</p>
-                        {{#if rating}}
-                        <p>Rating: {{rating}}</p>
+
+                        <p>Rating: <span class="uk-margin-small-right" uk-icon="star"></span><span class="uk-margin-small-right" uk-icon="star"></span><span class="uk-margin-small-right" uk-icon="star"></span><span class="uk-margin-small-right" uk-icon="star"></span><span class="uk-margin-small-right" uk-icon="star"></span></p>
                         <p>That's hott!</p>
-                        {{/if}}
+
                         <button class="flight-link uk-button uk-button-secondary">Book my flight!</button>
                     </div>
                 </div>
@@ -37,6 +35,6 @@
                 </div>
             </form>
         </section>
-        {{/if}}
+
 
         <script src="/javascript/script.js"></script>
