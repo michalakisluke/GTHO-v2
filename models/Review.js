@@ -11,17 +11,17 @@ Review.init({
         primaryKey: true,
         autoIncrement: true
     },
-    rating: {
-        type: DataTypes.INTEGER,
-        allowNull: false
-    },
-    user: {
+    user_id: {
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
             model: 'user',
             key: 'id'
         }
+    },
+    rating: {
+        type: DataTypes.INTEGER,
+        allowNull: false
     },
     destination_id: {
         type: DataTypes.INTEGER,
@@ -31,13 +31,14 @@ Review.init({
             key: 'id'
         }
     }
-}, 
+  }, 
   {
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
     modelName: 'review'
-});
+  }
+);
 
 module.exports = Review;
