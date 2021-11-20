@@ -50,7 +50,7 @@ $(".search-button").on("click", function(event) {
     } else {
         localTempApiFetch();
         // show spinner & hide user input upon click
-        $("#spinner").removeAttr("hidden");
+        Handlebars.requirePartial('throbber');
         $("#location").attr("hidden", true);
         $(".down-button").attr("hidden", true);
     }
