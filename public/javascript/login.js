@@ -22,7 +22,21 @@ async function signupFormHandler(event) {
         if (response.ok) {
             userStatus = loggedin;
         } else {
-            alert(response.statusText);
+            $("#password").effect("shake");
         }
     }
-}
+};
+
+$(".search-button").on("click", function(event) {
+    event.preventDefault();
+    zip = $("#user-zip").val().trim();
+    if (zip.length !== 5) {
+        $("#user-zip").effect("shake");
+        return;
+    } else {
+        localTempApiFetch();
+        $("#spinner").removeAttr("hidden");
+        $("#location").attr("hidden", true);
+        $(".down-button").attr("hidden", true);
+    }
+});

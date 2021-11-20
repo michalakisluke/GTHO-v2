@@ -144,8 +144,6 @@ function localTempApiFetch() {
 
 };
 
-Handlebars.registerPartial(result);
-
 // find closest airport
 function distance(latAtAirport, lonAtAirport, localLat, localLon) {
     if ((latAtAirport == localLat) && (lonAtAirport == localLon)) {

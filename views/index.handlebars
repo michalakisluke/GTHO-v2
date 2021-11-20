@@ -119,7 +119,7 @@
         <div class="uk-modal-dialog">
             <button class="uk-modal-close-default" type="button" uk-close></button>
             <div class="uk-modal-header">
-                {{#if user}}
+                {{#if loggedin}}
                 <h2 class="uk-modal-title">Welcome back!</h2>
                 {{/if}}
             </div>
@@ -131,27 +131,27 @@
                         <div class="uk-margin">
                             <div class="uk-inline">
                                 <span class="uk-form-icon" uk-icon="icon: user"></span>
-                                <input class="uk-input uk-form-width-small" type="text" name="username" id="username" placeholder="Usernamegit " />
+                                <input class="uk-input uk-form-width-medium" type="text" name="username" id="username" placeholder="Username" />
                             </div>
                         </div>
 
                         <div class="uk-margin">
                             <div class="uk-inline">
                                 <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: mail"></span>
-                                <input class="uk-input uk-form-width-small" type="email" id="email" name="email" placeholder="Email" />
+                                <input class="uk-input uk-form-width-medium" type="email" id="email" name="email" placeholder="Email" />
                             </div>
                         </div>
 
                         <div class="uk-margin">
                             <div class="uk-inline">
                                 <span class="uk-form-icon" uk-icon="icon: lock"></span>
-                                <input class="uk-input uk-form-width-small" type="text" id="password" name="password" placeholder="Password" />
+                                <input class="uk-input uk-form-width-medium" type="password" id="password" name="password" placeholder="Password" />
                             </div>
                         </div>
 
                         <div class="uk-modal-footer uk-text-right">
                             <div>
-                                <input type="submit" value="Login" class="search-button uk-input uk-form-width-small uk-button-secondary" />
+                                <input type="submit" value="Login" class="search-button uk-input uk-form-width-small uk-button-secondary" id="signup" />
                             </div>
                             {{!-- TODO: handle submission --}}
                         </div>
@@ -178,21 +178,21 @@
                         <div class="uk-margin">
                             <div class="uk-inline">
                                 <span class="uk-form-icon" uk-icon="icon: user"></span>
-                                <input class="uk-input uk-form-width-small" type="text" name="username" id="username-signup" placeholder="Usernamegit " />
+                                <input class="uk-input uk-form-width-medium" type="text" name="username" id="username-signup" placeholder="Username" />
                             </div>
                         </div>
 
                         <div class="uk-margin">
                             <div class="uk-inline">
                                 <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: mail"></span>
-                                <input class="uk-input uk-form-width-small" type="email" id="email" name="email-signup" placeholder="Email" />
+                                <input class="uk-input uk-form-width-medium" type="email" id="email" name="email-signup" placeholder="Email" />
                             </div>
                         </div>
 
                         <div class="uk-margin">
                             <div class="uk-inline">
                                 <span class="uk-form-icon" uk-icon="icon: lock"></span>
-                                <input class="uk-input uk-form-width-small" type="text" id="password" name="password-signup" placeholder="Password" />
+                                <input class="uk-input uk-form-width-medium" type="password" id="password" name="password-signup" placeholder="Password" />
                             </div>
                         </div>
 
