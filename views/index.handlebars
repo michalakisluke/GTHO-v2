@@ -1,4 +1,32 @@
-{{>nav}}
+<nav class="uk-navbar-container" uk-navbar>
+        <div class="uk-navbar-left">
+            <img src="assets/img/heat.png" height="40" width="40" class="uk-logo uk-margin-medium-left" uk-svg></img>
+        </div>
+
+        <div class="uk-navbar-right uk-margin-medium-right">
+
+            <ul class="uk-navbar-nav uk-iconnav" id="uk-iconnav">
+                {{!-- <!--  TODO: destination search target destinations modal --> --}}
+                <li><a class="uk-navbar-toggle" uk-toggle href="#search-destination" uk-tooltip="Explore Destinations"><span class="uk-margin-small-right" uk-search-icon></span></a></li>
+                <!--  User location -->
+                <li><a href="#locations" uk-tooltip="Let's Go"><span class="uk-margin-small-right" uk-icon="icon: world"></span></a></li>
+                {{#if user}}
+                {{!-- <!-- TODO: logout --> --}}
+                <li><a href="#" id="logout" uk-tooltip="Logout"><span class="uk-margin-small-right" uk-icon="icon: sign-out"></span></a></li>
+                {{!-- TODO: delete user reviews --}}
+                <li><a ref="#" id="delete" uk-tooltip="Remove my ratings"><span class="uk-margin-small-right" uk-icon="refresh"></span></a></li>
+                {{else}}
+                {{!-- <!-- TODO: sign in target login modal --> --}}
+                <li><a class="uk-navbar-toggle" uk-toggle href="#user-login" uk-tooltip="Sign up & Login"><span class="uk-margin-small-right" uk-icon="icon: sign-in"></span></a></li>
+                {{/if}}
+                {{!-- <!--  Team --> --}}
+                <li><a href="#credits" uk-tooltip="Team"><span class="uk-margin-small-right" uk-icon="icon: users"></span></a></li>
+            </ul>
+            <ul class="uk-iconnav">
+                <li><a class="uk-navbar-toggle" uk-toggle="target: #uk-iconnav; mode: click" uk-tooltip="Menu"><span class="uk-margin-small-right" uk-icon="icon: menu"></span></a></li>
+            </ul>
+        </div>
+    </nav>
 
     <main>    
         <section id="explanation">
@@ -48,4 +76,18 @@
 
     </main>
 
-{{>footer}}
+    <footer id="credits">
+
+        <div class="uk-card uk-background-muted uk-padding">
+            <h3 class="uk-heading-line uk-text-right uk-margin-small-left"><span>Brought to you by</span></h3>
+
+            <div class="uk-grid-collapse uk-child-width-expand@s uk-text-center" uk-grid>
+                <div class="uk-background-muted uk-link-muted uk-small-padding"><a href="https://github.com/flumanuck"><span class="uk-margin-small" uk-icon="icon: github"></span> Jacob Machlis</div>
+
+                <div class="uk-background-muted uk-link-muted uk-small-padding"><a href="https://github.com/michalakisluke"><span class="uk-margin-small" uk-icon="icon: github-alt"></span> Luke Michalakis</div>
+
+                <div class="uk-background-muted uk-link-muted uk-small-padding"><a href="https://github.com/sarahdickinson"><span class="uk-margin-small" uk-icon="icon: github"></span> Sarah Dickinson</div>
+            </div>
+        </div>
+    </footer>
+
