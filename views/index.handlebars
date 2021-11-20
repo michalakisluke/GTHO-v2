@@ -1,6 +1,6 @@
 <nav class="uk-navbar-container" uk-navbar>
         <div class="uk-navbar-left">
-            <img src="assets/img/heat.png" height="40" width="40" class="uk-logo uk-margin-medium-left" uk-svg></img>
+            <img src="/public/img/heat.png" height="40" width="40" class="uk-logo uk-margin-medium-left" uk-svg></img>
         </div>
 
         <div class="uk-navbar-right uk-margin-medium-right">
@@ -28,12 +28,193 @@
         </div>
     </nav>
 
+    {{!--   This is the search destination modal  --}}
+    <div id="search" uk-modal>
+        <div class="uk-modal-dialog">
+            <button class="uk-modal-close-default" type="button" uk-close></button>
+            <div class="uk-modal-header">
+                <h2 class="uk-modal-title">Where to?</h2>
+            </div>
+
+            <div>
+                <div class="uk-modal-body uk-text-center uk-padding-large">
+                    <form class="uk-search uk-search-large">
+                        <input id="search" class="uk-search-input uk-text-center" type="search" onekeyup="search" placeholder="Explore Destinations" autofocus>
+                    </form>
+                </div>
+                <ul id="destinationsList"></ul>
+                <div class="uk-modal-footer uk-text-right"></div>
+            </div>
+            <script src=""></script>
+        </div>
+    </div>
+
+    {{!--   This is the chosen destination modal  --}}
+    <div id="search-destination" uk-modal>
+        <div class="uk-modal-dialog">
+            <button class="uk-modal-close-default" type="button" uk-close></button>
+            <div class="uk-modal-header">
+                <h2 class="uk-modal-title">[city]
+                    {{!-- funcationality? --}}
+                    {{!-- poitive review  --}}
+                    {{if ratingHot}}
+                    <span class="uk-margin-small-right" uk-icon="star"></span>
+                    {{else}}
+                    {{!-- negative review --}}
+                    <span class="uk-margin-small-right" uk-icon="trash"></span>
+                    {{/if}}
+                </h2>
+            </div>
+
+            <div>
+                <div class="uk-modal-body uk-text-center uk-padding-large">
+                    {{!--  TODO: connect rating to city and update  --}}
+                    <p>Been there, done that?</p>
+                    <p>Was it hot?</p>
+                    <div>
+                        <button class="uk-button uk-button-link uk-padding-large"><span uk-icon="icon: check"></span></button>
+                        <button class="uk-button uk-button-link uk-padding-large"><span uk-icon="icon: close"></span></button>
+                    </div>
+                    {{!--  TODO: handle rating submission --}}
+                </div>
+                <div class="uk-modal-footer uk-text-right">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{!--  This is the inital user login modal --}}
+    <div id="user-account" uk-modal>
+        <div class="uk-modal-dialog">
+            <button class="uk-modal-close-default" type="button" uk-close></button>
+            <div class="uk-modal-header">
+                <h2 class="uk-modal-title">Come here often?</h2>
+            </div>
+            <div>
+                <div class="uk-modal-body uk-text-center uk-padding-large">
+                       
+                    <div class="uk-margin">
+                        <div class="uk-inline">
+                            <button class="uk-button uk-button-default" uk-toggle href="#user-signup">It's my first time.</button>
+                        </div>
+                    </div>
+
+                    <div class="uk-margin">
+                        <div class="uk-inline">
+                            <button class="uk-button uk-button-secondary" uk-toggle href="#user-login">This ain't my first rodeo!</button>
+                        </div>
+                    </div>
+
+                    <div class="uk-modal-footer uk-text-right">
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{!--  This is the user login modal --}}
+    <div id="user-login" uk-modal>
+        <div class="uk-modal-dialog">
+            <button class="uk-modal-close-default" type="button" uk-close></button>
+            <div class="uk-modal-header">
+                {{#if user}}
+                <h2 class="uk-modal-title">Welcome back!</h2>
+                {{/if}}
+            </div>
+            <div>
+                <div class="uk-modal-body uk-text-center uk-padding-large">
+                    <p>Enter your information to access our hottests features.</p>
+                    <form>
+
+                        <div class="uk-margin">
+                            <div class="uk-inline">
+                                <span class="uk-form-icon" uk-icon="icon: user"></span>
+                                <input class="uk-input uk-form-width-small" type="text" name="username" id="username" placeholder="Usernamegit " />
+                            </div>
+                        </div>
+
+                        <div class="uk-margin">
+                            <div class="uk-inline">
+                                <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: mail"></span>
+                                <input class="uk-input uk-form-width-small" type="email" id="email" name="email" placeholder="Email" />
+                            </div>
+                        </div>
+
+                        <div class="uk-margin">
+                            <div class="uk-inline">
+                                <span class="uk-form-icon" uk-icon="icon: lock"></span>
+                                <input class="uk-input uk-form-width-small" type="text" id="password" name="password" placeholder="Password" />
+                            </div>
+                        </div>
+
+                        <div class="uk-modal-footer uk-text-right">
+                            <div>
+                                <input type="submit" value="Login" class="search-button uk-input uk-form-width-small uk-button-secondary" />
+                            </div>
+                            {{!-- TODO: handle submission --}}
+                        </div>
+
+                    </form>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+        {{!--  This is the user sign up modal --}}
+    <div id="user-signup" uk-modal>
+        <div class="uk-modal-dialog">
+            <button class="uk-modal-close-default" type="button" uk-close></button>
+            <div class="uk-modal-header">
+                <h2 class="uk-modal-title">Join us!</h2>
+            </div>
+            <div>
+                <div class="uk-modal-body uk-text-center uk-padding-large">
+                    <p>Enter your information to access our hottests features.</p>
+                    <form>
+
+                        <div class="uk-margin">
+                            <div class="uk-inline">
+                                <span class="uk-form-icon" uk-icon="icon: user"></span>
+                                <input class="uk-input uk-form-width-small" type="text" name="username" id="username-signup" placeholder="Usernamegit " />
+                            </div>
+                        </div>
+
+                        <div class="uk-margin">
+                            <div class="uk-inline">
+                                <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: mail"></span>
+                                <input class="uk-input uk-form-width-small" type="email" id="email" name="email-signup" placeholder="Email" />
+                            </div>
+                        </div>
+
+                        <div class="uk-margin">
+                            <div class="uk-inline">
+                                <span class="uk-form-icon" uk-icon="icon: lock"></span>
+                                <input class="uk-input uk-form-width-small" type="text" id="password" name="password-signup" placeholder="Password" />
+                            </div>
+                        </div>
+
+                        <div class="uk-modal-footer uk-text-right">
+                            <div>
+                                <input type="submit" value="Login" class="search-button uk-input uk-form-width-small uk-button-secondary" />
+                            </div>
+                            {{!-- TODO: handle submission --}}
+                        </div>
+
+                    </form>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
     <main>    
         <section id="explanation">
             <div class="uk-flex uk-child-width-1-2@m" uk-grid>
 
                 <div class="uk-card">
-                    <img src="../public/img/photo-1594478277825-11f41a17122a.jpg" alt="">
+                    <img src="/public/img/photo-1594478277825-11f41a17122a.jpg" alt="">
                     <div class="uk-overlay uk-position-medium uk-position-top-center uk-hidden@m">
                         <h1 id="h1">Get Me the Hell Out of Here!</h1>
                     </div>
@@ -66,10 +247,7 @@
         </section>
 
 
-{{!-- THROBBER... ew Jacob --}}
-        <section id="spinner" class="uk-text-center uk-padding-large" hidden>
-            <div><span uk-spinner="ratio: 4.5"></span></div>
-        </section>
+{{>throbber}}
 
 
 {{>result}}
@@ -91,3 +269,8 @@
         </div>
     </footer>
 
+    <script src="../public/javascript/script.js"></script>
+    <script src="../public/javascript/login.js"></script>
+    <script src="../public/javascript/logout.js"></script>
+    <script src="../public/javascript/delete-ratings.js"></script>
+    <script src="../public/javascript/vote.js"></script>    
