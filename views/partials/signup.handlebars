@@ -1,0 +1,46 @@
+{{!--  This is the user sign up modal --}}
+<div id="user-signup" uk-modal>
+    <div class="uk-modal-dialog">
+        <button class="uk-modal-close-default" type="button" uk-close></button>
+        <div class="uk-modal-header">
+            <h2 class="uk-modal-title">Join us!</h2>
+        </div>
+        <div>
+            <div class="uk-modal-body uk-text-center uk-padding-large">
+                <p>Enter your information to access our hottests features.</p>
+                <form>
+
+                    <div class="uk-margin">
+                        <div class="uk-inline">
+                            <span class="uk-form-icon" uk-icon="icon: user"></span>
+                            <input class="uk-input uk-form-width-small" type="text" name="username" id="username-signup" placeholder="Usernamegit " />
+                        </div>
+                    </div>
+
+                    <div class="uk-margin">
+                        <div class="uk-inline">
+                            <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: mail"></span>
+                            <input class="uk-input uk-form-width-small" type="email" id="email" name="email-signup" placeholder="Email" />
+                        </div>
+                    </div>
+
+                    <div class="uk-margin">
+                        <div class="uk-inline">
+                            <span class="uk-form-icon" uk-icon="icon: lock"></span>
+                            <input class="uk-input uk-form-width-small" type="text" id="password" name="password-signup" placeholder="Password" />
+                        </div>
+                    </div>
+
+                    <div class="uk-modal-footer uk-text-right">
+                        <div>
+                            <input type="submit" value="Login" class="search-button uk-input uk-form-width-small uk-button-secondary" />
+                        </div>
+                        {{!-- TODO: handle submission --}}
+                    </div>
+
+                </form>
+            </div>
+            
+        </div>
+    </div>
+</div>
