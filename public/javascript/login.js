@@ -4,6 +4,9 @@ async function signupFormHandler(event) {
     const username = document.querySelector('#username-signup').value.trim();
     const email = document.querySelector('#email-signup').value.trim();
     const password = document.querySelector('#password-signup').value.trim();
+
+    var userStatus = null;
+
     git
     if (username && email && password) {
         const response = await fetch('/api/users', {
@@ -17,7 +20,7 @@ async function signupFormHandler(event) {
         });
         // check response status 
         if (response.ok) {
-            console.log('Success');
+            userStatus = loggedin;
         } else {
             alert(response.statusText);
         }

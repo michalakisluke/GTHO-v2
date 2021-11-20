@@ -7,7 +7,7 @@
 
             <ul class="uk-navbar-nav uk-iconnav" id="uk-iconnav">
                 {{!--   TODO: destination search target destinations modal  --}}
-                <li><a class="uk-navbar-toggle" uk-toggle href="#search-destination" uk-tooltip="Explore Destinations"><span class="uk-margin-small-right" uk-search-icon></span></a></li>
+                <li><a class="uk-navbar-toggle" uk-toggle href="#search" uk-tooltip="Explore Destinations"><span class="uk-margin-small-right" uk-search-icon></span></a></li>
                 {{!--   User location  --}}
                 <li><a href="#locations" uk-tooltip="Let's Go"><span class="uk-margin-small-right" uk-icon="icon: world"></span></a></li>
                 {{#if user}}
@@ -17,7 +17,7 @@
                 <li><a ref="#" id="delete" uk-tooltip="Remove my ratings"><span class="uk-margin-small-right" uk-icon="refresh"></span></a></li>
                 {{else}}
                 {{!--  TODO: sign in target login modal  --}}
-                <li><a class="uk-navbar-toggle" uk-toggle href="#user-login" uk-tooltip="Sign up & Login"><span class="uk-margin-small-right" uk-icon="icon: sign-in"></span></a></li>
+                <li><a class="uk-navbar-toggle" uk-toggle href="#account-login" uk-tooltip="Sign up & Login"><span class="uk-margin-small-right" uk-icon="icon: sign-in"></span></a></li>
                 {{/if}}
                 {{!--   Team  --}}
                 <li><a href="#credits" uk-tooltip="Team"><span class="uk-margin-small-right" uk-icon="icon: users"></span></a></li>
@@ -57,7 +57,7 @@
                 <h2 class="uk-modal-title">[city]
                     {{!-- funcationality? --}}
                     {{!-- poitive review  --}}
-                    {{if ratingHot}}
+                    {{#if ratingHot}}
                     <span class="uk-margin-small-right" uk-icon="star"></span>
                     {{else}}
                     {{!-- negative review --}}
@@ -84,7 +84,7 @@
     </div>
 
     {{!--  This is the inital user login modal --}}
-    <div id="user-account" uk-modal>
+    <div id="account-login" uk-modal>
         <div class="uk-modal-dialog">
             <button class="uk-modal-close-default" type="button" uk-close></button>
             <div class="uk-modal-header">

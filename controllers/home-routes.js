@@ -22,6 +22,9 @@ const Review = require('../models/Review');
 // });
 
 module.exports = router;
+router.get('/login', (req, res) => {
+    res.render('login');
+});
 
 // req.user
 // req.isAuthenticated() -> true or false
