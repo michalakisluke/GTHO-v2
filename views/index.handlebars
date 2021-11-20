@@ -57,9 +57,12 @@
                 <h2 class="uk-modal-title">[city]
                     {{!-- funcationality? --}}
                     {{!-- poitive review  --}}
+                    {{if ratingHot}}
                     <span class="uk-margin-small-right" uk-icon="star"></span>
+                    {{else}}
                     {{!-- negative review --}}
                     <span class="uk-margin-small-right" uk-icon="trash"></span>
+                    {{/if}}
                 </h2>
             </div>
 
@@ -244,10 +247,7 @@
         </section>
 
 
-{{!-- THROBBER... ew Jacob --}}
-        <section id="spinner" class="uk-text-center uk-padding-large" hidden>
-            <div><span uk-spinner="ratio: 4.5"></span></div>
-        </section>
+{{>throbber}}
 
 
 {{>result}}

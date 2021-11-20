@@ -66,4 +66,3 @@ VALUES
   ('Omaha','OMA'),
   ('Memphis','MEM'),
   ('Reno','RNO');
-
