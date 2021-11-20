@@ -49,7 +49,7 @@ $(".search-button").on("click", function(event) {
         return;
     } else {
         localTempApiFetch();
-        $("#spinner").attr("hidden", true);
+        $("#spinner").removeAttr("hidden");
         $("#location").attr("hidden", true);
         $(".down-button").attr("hidden", true);
     }
@@ -142,7 +142,9 @@ function localTempApiFetch() {
                 })
         })
 
-}
+};
+
+Handlebars.registerPartial(result);
 
 // find closest airport
 function distance(latAtAirport, lonAtAirport, localLat, localLon) {
