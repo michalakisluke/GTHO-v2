@@ -67,3 +67,8 @@ VALUES
   ('Memphis','MEM'),
   ('Reno','RNO');
 
+  INSERT INTO review (rating, user.id, destination.id)
+  VALUES
+  (1, 1, 481);
+  
+

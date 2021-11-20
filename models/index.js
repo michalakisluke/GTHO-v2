@@ -3,9 +3,8 @@ const Destination = require('./Destination');
 const Review = require('./Review');
 
 //Associations
-//Need to figure this out, Destination needs to reference User somehow I think. Talk to jonathan
 User.hasMany(Review, {
-    foreignKey: 'user',
+    foreignKey: 'user_id',
     onDelete: 'cascade'
 });
 
@@ -18,4 +17,4 @@ Destination.hasMany(Review, {
 
 Review.belongsTo(Destination);
 
-module.exports = {User, Review, Destination };
+module.exports = { User, Review, Destination };

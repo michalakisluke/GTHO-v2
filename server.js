@@ -24,13 +24,12 @@ const sess = {
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 app.set("views", "./views");
-app.use(passport.initialize());
-// This line here breaks my code!!
-app.use(passport.session());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(session(sess));
+app.use(passport.initialize());
+app.use(passport.session());
 
 //turn on routes
 app.get('/', (req, res) => {
