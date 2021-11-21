@@ -1,8 +1,7 @@
 # GTHO-Travel-App
 
 ## Description
-Get Me the Hell Out of Here is a travel application that utilizes flight, location, and weather APIs to provide the user with flight information for the hottest travel destinations. The user enters their zip code and GTHO returns the next departure from their nearest airport headed to the warmest destination in a 500 mile radius.
-
+Get Me the Hell Out of Here is a travel application that utilizes flight, location, and weather APIs to provide the user with flight information for the hottest travel destinations. The user enters their zip code and GTHO returns the next departure from their nearest airport headed to the warmest destination in a 500 mile radius. The user can also log in to save and leave reviews for places they've been to let other users know if they place they've been to is a good destination.
 
 ## Screenshots
 ![GTHO application intro](assets/img/gtho_screenshot1.png)
@@ -12,7 +11,7 @@ Get Me the Hell Out of Here is a travel application that utilizes flight, locati
 
 
 ## Link to Deployed Application
-[Get Me the Hell Out of Here](https://michalakisluke.github.io/GTHO-Travel-App/)
+[Get Me the Hell Out of Here](https://floating-wave-98179.herokuapp.com/)
 
 
 ## Technologies Used
@@ -30,6 +29,9 @@ Get Me the Hell Out of Here is a travel application that utilizes flight, locati
 * HTML
 * CSS
 * Javascript
+* Node.js
+* Express
+* Handlebars
 
 
 ## Authors & Acknowledgements
